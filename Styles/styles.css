@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+body {
+  font-family: 'VT323', monospace;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #f4f1de, #e9e4d4);
+  color: #2e2e2e;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --vintage-green: #a3b18a;
+  --vintage-brown: #6b705c;
+  --vintage-yellow: #ffe066;
+  --vintage-orange: #f4a261;
+}
+
+header {
+  background: linear-gradient(to right, var(--vintage-brown), #574f46);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+  font-size: 3em;
+  animation: slideDown 1s ease-out;
+  letter-spacing: 2px;
+}
+
+header p {
+  margin: 20px auto;
+  font-size: 1.2em;
+  max-width: 600px;
+  animation: fadeInText 2.5s ease-in-out;
+}
+
+header a {
+  padding: 12px 24px;
+  background-color: var(--vintage-yellow);
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 20px;
+  animation: popIn 1s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header a:hover {
+  background-color: var(--vintage-orange);
+  transform: scale(1.05);
+}
+
+section {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+section h2 {
+  font-size: 2em;
+  text-align: center;
+  border-bottom: 3px dashed var(--vintage-green);
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  color: var(--vintage-brown);
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-left: 3px solid var(--vintage-green);
+  padding-left: 25px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-left: 5px solid var(--vintage-yellow);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+form {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+  animation: slideUpFade 1s ease-out;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--vintage-orange);
+  outline: none;
+}
+
+form button {
+  background-color: var(--vintage-green);
+  color: white;
+  padding: 12px;
+  border: none;
+  font-size: 1em;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--vintage-brown);
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: var(--vintage-brown);
+  color: white;
+  text-align: center;
+  padding: 30px;
+  margin-top: 60px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideUpFade {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.2em;
+  }
+
+  section h2 {
+    font-size: 1.6em;
+  }
+
+  .card {
+    font-size: 1em;
+  }
+
+  .card-container {
+    padding-left: 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+
+  header p, header a {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  header p {
+    font-size: 0.9em;
+  }
+
+  header a {
+    font-size: 0.9em;
+    padding: 10px 18px;
+  }
+
+  section h2 {
+    font-size: 1.4em;
+  }
+
+  .card {
+    font-size: 0.9em;
+  }
+}
